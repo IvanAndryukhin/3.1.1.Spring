@@ -1,17 +1,19 @@
 package net.javacode.spring_311.service;
 
-import net.javacode.spring_311.model.User;
 import net.javacode.spring_311.dao.UserDao;
+import net.javacode.spring_311.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
 
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;
+
     @Autowired
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;

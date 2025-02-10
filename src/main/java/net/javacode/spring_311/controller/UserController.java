@@ -4,10 +4,8 @@ import net.javacode.spring_311.model.User;
 import net.javacode.spring_311.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,7 +43,7 @@ public class UserController {
 
     @GetMapping("/edit")
     public String editUser(@RequestParam int id, Model model) {
-        User user = userService.getUser(id);
+        userService.getUser(id);
         model.addAttribute("user", userService.getUser(id));
         return "edit_user";
     }
